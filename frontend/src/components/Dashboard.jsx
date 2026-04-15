@@ -8,6 +8,28 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const handleConnect = async (receiverId) => {
+    try {
+      const response = await fetch('http://localhost:8080/api/connections/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          senderFirebaseUid: auth.currentUser?.uid,
+          receiverId: receiverId.toString(),
+          message: "Hey! Let's study together!"
+        })
+      });
+      if (response.ok) {
+        alert("Request sent successfully!");
+      } else {
+        const text = await response.text();
+        alert("Notice: " + text);
+      }
+    } catch(err) {
+      alert("Error sending request.");
+    }
+  };
+
   const fetchMatches = async () => {
     setLoading(true);
     setError(null);
@@ -148,7 +170,11 @@ export default function Dashboard() {
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <button className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>
+                    <button 
+                      className="btn btn-primary" 
+                      style={{ padding: '0.5rem 1rem' }}
+                      onClick={() => handleConnect(match.profileId)}
+                    >
                       <MessageCircle size={16}/> Send Request
                     </button>
                   </div>

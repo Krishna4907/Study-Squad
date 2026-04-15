@@ -7,6 +7,8 @@ import { BookOpen, LogOut } from 'lucide-react';
 import Auth from './components/Auth';
 import Onboarding from './components/Onboarding';
 import Dashboard from './components/Dashboard';
+import Connections from './components/Connections';
+import StudyRoom from './components/StudyRoom';
 
 // Landing Page
 function Landing() {
@@ -39,7 +41,9 @@ function Navbar({ user }) {
       
       {user ? (
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-          <span style={{ color: 'var(--text-secondary)' }}>Welcome, {user.email}</span>
+          <Link to="/dashboard" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontWeight: 500 }}>Dashboard</Link>
+          <Link to="/network" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontWeight: 500 }}>Network</Link>
+          <span style={{ color: 'var(--text-secondary)' }}>{user.email}</span>
           <button onClick={handleLogout} className="btn btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <LogOut size={16} /> Logout
           </button>
@@ -94,6 +98,8 @@ function App() {
             <Route path="/auth" element={!user ? <Auth /> : <Navigate to={hasProfile ? "/dashboard" : "/onboarding"} />} />
             <Route path="/onboarding" element={user ? <Onboarding user={user} setHasProfile={setHasProfile} /> : <Navigate to="/auth" />} />
             <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/auth" />} />
+            <Route path="/network" element={user ? <Connections /> : <Navigate to="/auth" />} />
+            <Route path="/room/:roomId" element={user ? <StudyRoom /> : <Navigate to="/auth" />} />
           </Routes>
         </main>
       </div>
