@@ -354,17 +354,6 @@ For each registered user (excluding self):
 
 ---
 
-## 📸 Screenshots
-
-> _Screenshots coming soon. Run the application locally to explore the full UI._
-
-| Screen | Description |
-|---|---|
-| **Auth Page** | Login / Sign-up with Firebase email authentication |
-| **Onboarding** | Multi-step profile wizard (basic info → learning style → availability) |
-| **Dashboard** | AI-matched study partners with compatibility scores |
-| **Connections** | Pending requests and active study partner network |
-| **Study Room** | Launch encrypted video room for collaborative study sessions |
 
 ---
 
