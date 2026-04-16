@@ -2,7 +2,7 @@
   <img src="frontend/public/favicon.svg" alt="StudySquad Logo" width="80" height="80" />
 </p>
 
-<h1 align="center"> StudySquad</h1>
+<h1 align="center">🚀 StudySquad</h1>
 
 <p align="center">
   <strong>AI-Powered Study Partner Matching Platform</strong><br/>
@@ -16,11 +16,12 @@
   <img src="https://img.shields.io/badge/PostgreSQL-16-4169E1?logo=postgresql&logoColor=white" alt="PostgreSQL" />
   <img src="https://img.shields.io/badge/Firebase-Auth-FFCA28?logo=firebase&logoColor=black" alt="Firebase" />
   <img src="https://img.shields.io/badge/Java-17-ED8B00?logo=openjdk&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" />
 </p>
 
 ---
 
-##  Table of Contents
+## 📚 Table of Contents
 
 - [About the Project](#about-the-project)
 - [Key Features](#key-features)
@@ -39,7 +40,7 @@
 
 ---
 
-## About the Project
+## 📖 About the Project
 
 **StudySquad** is a full-stack web application designed to connect university students with compatible study partners. The platform uses a custom-built **compatibility matching algorithm** that intelligently analyzes each user's academic profile — including enrolled courses, preferred learning style, schedule availability, and study goals — to recommend the most suitable study partners.
 
@@ -47,20 +48,20 @@ Once matched, students can send connection requests to one another, build a pers
 
 ---
 
-## Key Features
+## ✨ Key Features
 
-###  Authentication
+### 🔐 Authentication
 - Secure sign-up and sign-in powered by **Firebase Authentication**
 - Persistent sessions with automatic state management
 - Seamless toggle between login and registration flows
 
-###  Onboarding & Profile Setup
+### 📋 Onboarding & Profile Setup
 - Guided multi-step onboarding wizard to build a study profile
 - Captures **basic information** (name, year of study, branch)
 - Captures **academic preferences** (enrolled courses, learning style)
 - Captures **availability & goals** (schedule focus, session length, study goals)
 
-###  AI-Powered Matching
+### 🤖 AI-Powered Matching
 - Custom **compatibility scoring algorithm** running on the backend
 - Matches are ranked by a weighted compatibility percentage based on:
   - **Shared Courses** (40% weight) — highest priority for study relevance
@@ -69,18 +70,18 @@ Once matched, students can send connection requests to one another, build a pers
 - Only students sharing at least one common course are recommended
 - Results sorted by highest compatibility first
 
-###  Study Network & Connections
+### 🤝 Study Network & Connections
 - **Send connection requests** to matched study partners with custom messages
 - **Accept or reject** incoming study requests from other students
 - View **pending requests** and your full **study partner network**
 - Duplicate request prevention to maintain clean interaction flows
 
-###  Video Study Rooms
+### 🎥 Video Study Rooms
 - Upon accepting a connection, a **unique encrypted study room** is generated
 - Private video room launches in a new browser tab for secure, distraction-free study sessions
 - Designed to bypass browser security restrictions for camera and microphone access
 
-###  Dashboard
+### 📊 Dashboard
 - Centralized **profile tracker** displaying branch, enrolled courses, and learning style
 - Real-time display of AI-generated study partner matches
 - Each match card shows: name, compatibility rating, shared courses, availability info, and learning style alignment
@@ -88,7 +89,7 @@ Once matched, students can send connection requests to one another, build a pers
 
 ---
 
-## Tech Stack
+## 💻 Tech Stack
 
 ### Frontend
 | Technology | Purpose |
@@ -112,9 +113,9 @@ Once matched, students can send connection requests to one another, build a pers
 
 ---
 
-## Architecture Overview
+## 🏗 Architecture Overview
 
-```
+```text
 ┌─────────────────────────────┐          ┌──────────────────────────────┐
 │         FRONTEND            │          │          BACKEND             │
 │     (React + Vite)          │   REST   │     (Spring Boot + JPA)      │
@@ -132,16 +133,16 @@ Once matched, students can send connection requests to one another, build a pers
 │  │  • Connections        │  │          │  ┌────────────────────────┐  │
 │  │  • StudyRoom          │  │          │  │  PostgreSQL Database   │  │
 │  └───────────────────────┘  │          │  │  • user_profiles       │  │
-│                             │          │  │  • connection_requests  │  │
+│                             │          │  │  • connection_requests │  │
 └─────────────────────────────┘          │  └────────────────────────┘  │
                                          └──────────────────────────────┘
 ```
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
-```
+```text
 Study-Squad/
 ├── backend/
 │   ├── pom.xml                                          # Maven config & dependencies
@@ -182,7 +183,7 @@ Study-Squad/
 │           ├── Auth.jsx                                 # Login / Signup component
 │           ├── Onboarding.jsx                           # Multi-step profile builder
 │           ├── Dashboard.jsx                            # Match results & profile tracker
-│           ├── Connections.jsx                           # Network & request management
+│           ├── Connections.jsx                          # Network & request management
 │           └── StudyRoom.jsx                            # Video study room launcher
 │
 └── .gitignore
@@ -190,7 +191,7 @@ Study-Squad/
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -266,7 +267,7 @@ Ensure you have the following installed on your system:
 
 ---
 
-## API Reference
+## 🔌 API Reference
 
 ### Profile Management
 
@@ -327,7 +328,7 @@ Ensure you have the following installed on your system:
 
 ---
 
-## Matching Algorithm
+## 🧠 Matching Algorithm
 
 The **MatchingService** implements a weighted scoring system to calculate compatibility between students. The algorithm evaluates three key dimensions:
 
@@ -341,7 +342,7 @@ The **MatchingService** implements a weighted scoring system to calculate compat
 
 ### Algorithm Flow
 
-```
+```text
 For each registered user (excluding self):
   1. Calculate shared courses          → +40 if overlap exists
   2. Compare availability/schedule     → +30 (exact) or +15 (partial)
@@ -353,7 +354,7 @@ For each registered user (excluding self):
 
 ---
 
-## Screenshots
+## 📸 Screenshots
 
 > _Screenshots coming soon. Run the application locally to explore the full UI._
 
@@ -367,7 +368,7 @@ For each registered user (excluding self):
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! To contribute:
 
@@ -381,8 +382,6 @@ Please ensure your code follows the existing code style and includes relevant do
 
 ---
 
-## License
+## 📄 License
 
 This project is open source and available for educational purposes.
-
-
